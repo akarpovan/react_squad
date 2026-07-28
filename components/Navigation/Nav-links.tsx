@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
+type NavLinksProps = {
+  onLinkClick?: () => void;
+};
+
 // Asumiendo que tu array de links es algo así:
 const links = [
     { href: '/', label: 'Home' },
@@ -11,7 +15,7 @@ const links = [
     { href: '/sellers', label: 'Sellers' },
 ];
 
-export function NavLinks() {
+export function NavLinks({ onLinkClick }: NavLinksProps) {
     const pathname = usePathname();
 
     return (
@@ -30,6 +34,7 @@ export function NavLinks() {
                                 "text-gray-500 hover:text-black": !isActive,
                             }
                         )}
+                        onClick={onLinkClick}
                     >
                         {link.label}
                     </Link>
