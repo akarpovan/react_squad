@@ -118,7 +118,7 @@ export default function SellersPage() {
 
       <div className="mt-16 text-center">
         <p className="text-sm text-gray-500">
-          Want to become a seller? 
+          Want to become a seller with Handcrafted Haven? 
           <Link href="/sell" className="text-[#c95f3b] hover:underline ml-1">
             Apply here
           </Link>
