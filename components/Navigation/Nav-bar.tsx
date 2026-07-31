@@ -136,7 +136,7 @@ export function NavBar() {
 
                 <SignUpButton mode="modal">
                   <button 
-                    className="bg-[#6c47ff] text-white rounded-full text-sm font-medium py-3 px-6 w-full hover:bg-[#5a3de0] transition-colors"
+                    className="bg-[#c95f3b] text-white rounded-full text-sm font-medium py-3 px-6 w-full hover:bg-[#5a3de0] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     Registrarse
