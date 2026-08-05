@@ -18,10 +18,10 @@ export function ProductFilters() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
-    const [category, setCategory] = useState(searchParams.get('category') || 'All');
-    const [minPrice, setMinPrice] = useState(searchParams.get('minPrice') || '');
-    const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '');
-    const [search, setSearch] = useState(searchParams.get('search') || '');
+    const [category, setCategory] = useState(searchParams?.get('category') || 'All');
+    const [minPrice, setMinPrice] = useState(searchParams?.get('minPrice') || '');
+    const [maxPrice, setMaxPrice] = useState(searchParams?.get('maxPrice') || '');
+    const [search, setSearch] = useState(searchParams?.get('search') || '');
 
     function handleSearch(e: React.FormEvent) {
         e.preventDefault();
