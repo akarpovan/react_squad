@@ -1,0 +1,146 @@
+[
+  {
+    "id": "lisa-rosen",
+    "name": "Lisa Rosen",
+    "title": "Candle Maker",
+    "location": "South America",
+    "image": "/images/lisa.png",
+    "bio": "Lisa hand-pours premium soy candles with carefully selected scents inspired by nature. Her attention to detail and commitment to clean burning makes every candle special.",
+    "specialties": ["Soy Candles", "Scented Candles", "Gift Sets"],
+    "products": [
+      {
+        "name": "Lavender Candle",
+        "description": "A soothing lavender-scented soy candle.",
+        "price": "28",
+        "image": "/images/lavender_candle_main.png"
+      },
+      {
+        "name": "Coconut Candle",
+        "description": "A tropical coconut-scented soy candle.",
+        "price": "22",
+        "image": "/images/candle_coconut_main.png"
+      }
+    ]
+  },
+  {
+    "id": "brad-simons",
+    "name": "Brad Simons",
+    "title": "Abstract Artist",
+    "location": "North America",
+    "image": "/images/brad.png",
+    "bio": "Brad creates bold abstract paintings that explore color, emotion, and movement. His work brings energy and life into any space.",
+    "specialties": ["Abstract Art", "Canvas Paintings", "Commissions"],
+    "products": [
+      {
+        "name": "Floral design artwork",
+        "description": "A vibrant painting full of energy.",
+        "price": "16.99",
+        "image": "/images/floral_design_artwork.png"
+      },
+      {
+        "name": "Pressed flower picture",
+        "description": "A representation of flower in full bloom.",
+        "price": "19.99",
+        "image": "/images/pressed_flower_picture.png"
+      }
+    ]
+  },
+  {
+    "id": "matt-stafford",
+    "name": "Matt Stafford",
+    "title": "Artist",
+    "location": "North America",
+    "image": "/images/matt.png",
+    "bio": "Matt is a versatile artist whose work spans multiple mediums. He focuses on capturing the beauty of everyday moments.",
+    "specialties": ["Knitting","Mixed Media", "Prints", "Original Art"],
+    "products": [
+      {
+        "name": "Alpaca hug scarf",
+        "description": "Wearable art that brings warmth and style.",
+        "price": "25",
+        "image": "/images/alpaca_scarf_main.png"
+      },
+      {
+        "name": "Chullo earflaps",
+        "description": "A beautiful hand-knitted accessory.",
+        "price": "56",
+        "image": "/images/chullo_earflaps.png"
+      },
+      {
+        "name": "Sherpa wool hat",
+        "description": "Like a heater on your head.",
+        "price": "19.99",
+        "image": "/images/sherpa_wool_hat.png"
+      }
+    ]
+  },
+  {
+    "id": "rena-lopez",
+    "name": "Rena Lopez",
+    "title": "Sculptor",
+    "location": "Caribbean",
+    "image": "/images/rena.png",
+    "bio": "Rena sculpts elegant figures and abstract forms using clay and bronze. Her work celebrates the human form and natural world.",
+    "specialties": ["Clay Sculptures", "Bronze Castings", "Figurative Art"],
+    "products": [
+      {
+        "name": "Cooffee with soul mug",
+        "description": "Handcrafted ceramic mug.",
+        "price": "$28",
+        "image": "/images/coffee_mug_main.png"
+      },
+      {
+        "name": "Peony decorative plate",
+        "description": "A beautiful handcrafted ceramic plate.",
+        "price": "42",
+        "image": "/images/peony_plate_main.png"
+      }
+    ]
+  },
+  {
+    "id": "tony-espinoza",
+    "name": "Tony Espinoza",
+    "title": "Artist",
+    "location": "Central America",
+    "image": "/images/tony.png",
+    "bio": "Tony creates vibrant artwork that reflects the rich culture and landscapes of Central America.",
+    "specialties": ["Jewelry", "Cultural Pieces", "Wall Art"],
+    "products": [
+      {
+        "name": "Lucky red cord bracelet",
+        "description": "A refelction of beauty and culture.",
+        "price": "$22",
+        "image": "/images/red_cord_bracelet_main.png"
+      },
+        {
+            "name": "Crescent moon pendant necklace",
+            "description": "Shine like the moon.",
+            "price": "$38",
+            "image": "/images/crescent_moon_main.png"
+        }
+    ]
+  },
+  {
+    "id": "maria-silva",
+    "name": "Maria Silva",
+    "title": "Accessory Artist",
+    "location": "South America",
+    "image": "/images/maria.png",
+    "bio": "Maria creates beautiful hand-thrown ceramics inspired by the Mediterranean coast. Each piece is unique and made with love.",
+    "specialties": ["Accessories Art", "Vases", "Ceramic Sculptures"],
+    "products": [
+      {
+        "name": "Leather bag",
+        "description": "Walking around with style.",
+        "price": "98.98",
+        "image": "/images/leather_bag.png"
+      },
+      {
+        "name": "Natrona bag",
+        "description": "Natural beauty.",
+        "price": "64.99",
+        "image": "/images/natrona_bag.png"
+      }
+    ]
+  }
+]
