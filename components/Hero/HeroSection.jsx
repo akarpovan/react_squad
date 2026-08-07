@@ -93,25 +93,25 @@ const HeroSection = () => {
             <ProductCard 
               name="Alpaca Scarf" 
               title="Well nited and warm" 
-              price="$120" 
+              price="$25" 
               img="/images/alpaca_scarf_main.png" 
             />
             <ProductCard 
               name="Decorative Pillow" 
               title="Hand nited with care" 
-              price="$85" 
+              price="$18" 
               img="/images/pillowcase_main.png" 
             />
             <ProductCard 
               name="Lavender Candle" 
               title="Like being in a lavender field" 
-              price="$25" 
+              price="$28" 
               img="/images/lavender_candle_main.png" 
             />
             <ProductCard 
               name="Coconut Candle" 
               title="Hand poured with love" 
-              price="$15" 
+              price="$22" 
               img="/images/candle_coconut_main.png" 
             />
           </div>
