@@ -4,14 +4,19 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { StarRating } from '@/components/StarRating';
 import { ReviewCard } from '@/components/ReviewCard';
+import { ReviewForm } from '@/components/ReviewForm';
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    ssl:
+        process.env.NODE_ENV === 'production'
+            ? { rejectUnauthorized: false }
+            : false,
 });
 
 async function getProduct(id: string) {
     const client = await pool.connect();
+
     try {
         const result = await client.query(
             `SELECT p.*, u.name as seller_name, u.id as seller_user_id, sp.bio, sp.profile_image
@@ -21,6 +26,7 @@ async function getProduct(id: string) {
              WHERE p.id = $1`,
             [id]
         );
+
         return result.rows[0] || null;
     } finally {
         client.release();
@@ -29,6 +35,7 @@ async function getProduct(id: string) {
 
 async function getReviews(productId: string) {
     const client = await pool.connect();
+
     try {
         const result = await client.query(
             `SELECT r.*, u.name as reviewer_name
@@ -38,6 +45,7 @@ async function getReviews(productId: string) {
              ORDER BY r.id DESC`,
             [productId]
         );
+
         return result.rows;
     } finally {
         client.release();
@@ -70,13 +78,16 @@ export default async function ProductDetailPage({
 
     return (
         <div className="max-w-5xl mx-auto px-4 py-8">
-            {/* Volver al catálogo */}
-            <Link href="/products" className="text-sm text-gray-500 hover:text-black mb-6 inline-block">
+            {/* Back to products */}
+            <Link
+                href="/products"
+                className="text-sm text-gray-500 hover:text-black mb-6 inline-block"
+            >
                 ← Back to products
             </Link>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Imagen del producto */}
+                {/* Product image */}
                 <div className="relative w-full aspect-square bg-gray-100 rounded-lg overflow-hidden">
                     <Image
                         src={imageUrl}
@@ -88,30 +99,39 @@ export default async function ProductDetailPage({
                     />
                 </div>
 
-                {/* Info del producto */}
+                {/* Product information */}
                 <div className="flex flex-col gap-4">
                     <div>
                         <span className="text-xs uppercase tracking-wide text-gray-500">
                             {product.category}
                         </span>
-                        <h1 className="text-2xl font-bold mt-1">{product.name}</h1>
+
+                        <h1 className="text-2xl font-bold mt-1">
+                            {product.name}
+                        </h1>
                     </div>
 
-                    {/* Rating promedio */}
+                    {/* Average rating */}
                     <div className="flex items-center gap-2">
                         <StarRating rating={averageRating} />
+
                         <span className="text-sm text-gray-500">
                             {averageRating > 0
-                                ? `${averageRating.toFixed(1)} (${reviews.length} review${reviews.length !== 1 ? 's' : ''})`
+                                ? `${averageRating.toFixed(1)} (${reviews.length} review${reviews.length !== 1 ? 's' : ''
+                                })`
                                 : 'No reviews yet'}
                         </span>
                     </div>
 
-                    <p className="text-2xl font-semibold">${Number(product.price).toFixed(2)}</p>
+                    <p className="text-2xl font-semibold">
+                        ${Number(product.price).toFixed(2)}
+                    </p>
 
-                    <p className="text-gray-700 leading-relaxed">{product.description}</p>
+                    <p className="text-gray-700 leading-relaxed">
+                        {product.description}
+                    </p>
 
-                    {/* Datos del vendedor */}
+                    {/* Seller information */}
                     <Link
                         href={`/sellers/${product.seller_user_id}`}
                         className="flex items-center gap-3 mt-4 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
@@ -127,26 +147,40 @@ export default async function ProductDetailPage({
                                 />
                             ) : null}
                         </div>
+
                         <div>
-                            <p className="text-xs text-gray-500">Sold by</p>
-                            <p className="text-sm font-medium">{product.seller_name}</p>
+                            <p className="text-xs text-gray-500">
+                                Sold by
+                            </p>
+
+                            <p className="text-sm font-medium">
+                                {product.seller_name}
+                            </p>
                         </div>
                     </Link>
                 </div>
             </div>
 
-            {/* Sección de reviews */}
+            {/* Reviews section */}
             <div className="mt-12">
                 <h2 className="text-xl font-bold mb-4">
                     Reviews {reviews.length > 0 && `(${reviews.length})`}
                 </h2>
 
+                {/* Add a review */}
+                <ReviewForm productId={id} />
+
                 {reviews.length === 0 ? (
-                    <p className="text-gray-500">This product doesn't have any reviews yet.</p>
+                    <p className="text-gray-500">
+                        This product doesn't have any reviews yet.
+                    </p>
                 ) : (
                     <div className="flex flex-col gap-4">
                         {reviews.map((review: any) => (
-                            <ReviewCard key={review.id} review={review} />
+                            <ReviewCard
+                                key={review.id}
+                                review={review}
+                            />
                         ))}
                     </div>
                 )}
